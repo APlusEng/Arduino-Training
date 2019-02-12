@@ -1,0 +1,126 @@
+/*7 Segment Display with common anode Example*/
+/*define variables*/
+const int a=7;
+const int b=6;
+const int c=4;
+const int d=2;
+const int e=1;
+const int f=9;
+const int g=10;
+int i=0;
+/*Function that it realizes the number on display */
+void Led_on(int n)
+{
+  switch(n)
+{
+case 0: //represent 0
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        break;
+case 1://represent 1
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;        
+case 2://represent 2
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW);
+        break;
+case 3://represent 3
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW);
+        break;
+case 4://represent 4
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;
+case 5://represent 5
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;
+case 6://represent 6
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;      
+ case 7://represent 7
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+ case 8://represent 8
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;
+case 9://represent 9
+        digitalWrite(a, LOW);
+        digitalWrite(b, LOW);
+        digitalWrite(c, LOW);
+        digitalWrite(d, LOW);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;      
+}
+}
+/*setup*/
+ void setup(){//define the Leds as Output pins
+ pinMode(a, OUTPUT);
+ pinMode(b, OUTPUT);
+ pinMode(c, OUTPUT); 
+ pinMode(d, OUTPUT);
+ pinMode(e, OUTPUT);
+ pinMode(f, OUTPUT);
+ pinMode(g, OUTPUT);
+ }  
+/*loop*/
+ void loop() {
+for(i=0; i<=9; i++)
+ {Led_on(i);          //call the function Led_on to count from 0 at 9
+ delay(1000);}        //wait 1 second
+for(i=9; i>=0; i--)
+ {Led_on(i);          //call the function Led_on to count from 9 at 0
+ delay(1000);}        //wait 1 second
+ }
